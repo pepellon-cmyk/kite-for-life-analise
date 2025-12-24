@@ -1,0 +1,84 @@
+:root{
+  --bg:#0f1724;
+  --card: rgba(255,255,255,0.04);
+  --glass: rgba(255,255,255,0.06);
+  --accent: #7ce7c4;
+  --accent-2: #6dd3ff;
+  --muted: #a6b0c3;
+  --glass-border: rgba(255,255,255,0.08);
+}
+
+*{box-sizing:border-box}
+html,body,#root{height:100%}
+body{
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg, #071026 0%, #0f1724 100%);
+  color:#e6eef8;
+  padding:20px;
+}
+
+/* Layout */
+.app{max-width:1100px;margin:0 auto}
+.hero{display:flex;gap:18px;align-items:stretch;margin-bottom:18px}
+.hero-left{flex:1}
+.hero-right{width:260px;display:flex;align-items:center;justify-content:center}
+
+h1{margin:0;font-size:26px}
+.subtitle{color:var(--muted);margin-top:6px;margin-bottom:12px}
+.controls{display:flex;gap:8px;align-items:center}
+input[type=file]{background:transparent;color:var(--muted);border:1px dashed var(--glass-border);padding:8px 10px;border-radius:10px;color:var(--muted)}
+button{background:linear-gradient(90deg,var(--accent),var(--accent-2));border:none;padding:8px 10px;border-radius:10px;color:#012;cursor:pointer;font-weight:600}
+.hint{color:var(--muted);font-size:13px;margin-top:8px}
+
+/* Glass cards */
+.glass{
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+  border: 1px solid var(--glass-border);
+  border-radius:12px;
+  padding:12px;
+  backdrop-filter: blur(6px) saturate(120%);
+  box-shadow: 0 8px 30px rgba(2,6,23,0.6);
+  color:inherit;
+}
+
+.card-lg{width:220px;text-align:center}
+.card-lg h3{margin:0;font-size:12px;color:var(--muted);letter-spacing:1px}
+.project-name{font-size:16px;margin-top:8px;color:var(--accent);font-weight:700}
+
+/* KPI grid */
+.container{display:grid;gap:14px}
+.kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-bottom:12px}
+.kpi{
+  padding:12px;border-radius:10px;display:flex;flex-direction:column;gap:6px;
+}
+.kpi .label{color:var(--muted);font-size:13px}
+.kpi .value{font-size:20px;font-weight:700}
+
+/* Panels */
+.panel{background:var(--card);border-radius:10px;padding:12px;border:1px solid var(--glass-border)}
+.panel-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.panel-header h2{margin:0;font-size:16px}
+.panel-actions{display:flex;gap:8px;align-items:center}
+.panel-actions input, .panel-actions select{padding:6px 8px;border-radius:8px;border:1px solid var(--glass-border);background:transparent;color:var(--muted)}
+
+/* Table */
+.table-wrap{overflow:auto;max-height:380px}
+table{width:100%;border-collapse:collapse;font-size:13px}
+thead th{position:sticky;top:0;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:10px;text-align:left;color:var(--muted);border-bottom:1px solid rgba(255,255,255,0.04)}
+tbody td{padding:10px;border-bottom:1px solid rgba(255,255,255,0.03)}
+.table-actions button{background:transparent;border:1px solid var(--glass-border);padding:6px;border-radius:8px;color:var(--muted);cursor:pointer}
+
+/* Form */
+.form-row{display:flex;flex-direction:column;gap:6px;margin-bottom:8px}
+.form-row label{color:var(--muted);font-size:13px}
+.form-row input, .form-row textarea, .form-row select{padding:8px;border-radius:8px;border:1px solid var(--glass-border);background:transparent;color:inherit}
+
+/* Footer */
+.footer{text-align:center;margin-top:14px;color:var(--muted);font-size:13px}
+
+/* Responsive tweaks */
+@media (max-width:720px){
+  .hero{flex-direction:column}
+  .hero-right{width:100%}
+}
